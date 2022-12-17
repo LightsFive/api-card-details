@@ -1,4 +1,4 @@
-FROM openjdk:19 as builder
+FROM openjdk:21-jdk as builder
 
 VOLUME /tmp
 
