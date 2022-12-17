@@ -57,7 +57,7 @@
 						</exclude>
 					</excludes>
 					<image>
-						<name>922228114461.dkr.ecr.ap-south-1.amazonaws.com/api-card-details</name>
+						<name>922228114461.dkr.ecr.ap-south-1.amazonaws.com/api-card-details:${project.version}</name>
 					</image>
 				</configuration>
 			</plugin>
