@@ -1,4 +1,4 @@
-FROM openjdk:19-alpine as builder
+FROM openjdk:19 as builder
 
 VOLUME /tmp
 
