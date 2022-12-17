@@ -56,6 +56,9 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<image>
+						<name>public.ecr.aws/q2n5f9p3/api-card-details</name>
+					</image>
 				</configuration>
 			</plugin>
 		</plugins>
