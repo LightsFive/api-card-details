@@ -10,6 +10,8 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    env:
+      RUN_ID: ${{ github.run_id }}
 
     steps:
       - name: Install Octopus CLI
@@ -49,11 +51,11 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{ secrets.REPO_NAME }}
-          IMAGE_TAG: "latest"
+          IMAGE_TAG: ${project.version}
 
         run: |
           # Build a docker container and push it to ECR
           mvn spring-boot:build-image
           echo "Pushing image to ECR..."
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG-$RUN_ID
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
