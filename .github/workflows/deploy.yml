@@ -14,7 +14,7 @@ on:
         required: true
         default: 'main'
 
-name: AWS ECR Push
+name: Deploy
 
 jobs:
   deploy:
