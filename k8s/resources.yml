@@ -12,7 +12,7 @@ spec:
       port: 8080
       protocol: TCP
       targetPort: 8080
-      nodePort: 33000
+      nodePort: 32500
   selector:
     app: api-card-details
   type: NodePort
