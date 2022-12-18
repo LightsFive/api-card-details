@@ -7,7 +7,7 @@ metadata:
   namespace: lights5-api
 spec:
   replicas: 1
-  selectors:
+  selector:
     matchLabels:
       app: api-card-details
   strategy:
