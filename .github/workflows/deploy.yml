@@ -81,7 +81,7 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBE_CONFIG}
-          context: ${{ CONTEXT }}
+          context: 'api-kubernetes-dev'
           cluster-type: 'generic'
         id: setcontext
 
