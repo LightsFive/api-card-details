@@ -80,7 +80,7 @@ jobs:
         uses: azure/k8s-set-context@v2
         with:
           method: kubeconfig
-          kubeconfig: ${{ secrets.KUBE_CONFIG}
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
           context: 'api-kubernetes-dev'
           cluster-type: 'generic'
         id: setcontext
