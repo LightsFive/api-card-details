@@ -67,7 +67,7 @@ jobs:
           # Build a docker container and push it to ECR
           mvn spring-boot:build-image
           echo "Pushing image to ECR..."
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$environment-$RUN_ID
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:${{ env.environment }}-${{ env.RUN_ID }}
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
           
       - name: Setup Kubectl
@@ -90,4 +90,4 @@ jobs:
         with:
             namespace: 'lights5-api'
             manifests: k8s/resources.yml
-            images: 922228114461.dkr.ecr.ap-south-1.amazonaws.com/api-card-details:$environment-$RUN_ID
+            images: 922228114461.dkr.ecr.ap-south-1.amazonaws.com/api-card-details:${{ env.environment }}-${{ env.RUN_ID }}
