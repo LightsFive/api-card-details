@@ -81,7 +81,7 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
-          context: 'api-dev'
+          context: 'eksUser@api-kubernetes-dev.ap-south-1.eksctl.io'
           cluster-type: 'generic'
         id: setcontext
 
