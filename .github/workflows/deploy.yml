@@ -69,3 +69,25 @@ jobs:
           echo "Pushing image to ECR..."
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$environment-$RUN_ID
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          
+      - name: Setup Kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.23.1'
+        id: install
+
+      - name: Set K8s Context
+        uses: azure/k8s-set-context@v2
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBE_CONFIG}
+          context: ${{ CONTEXT }}
+          cluster-type: 'generic'
+        id: setcontext
+
+      - name: Deploy to Kubernetes
+        uses: Azure/k8s-deploy@v4
+        with:
+            namespace: 'lights5-api'
+            manifests: k8s/resources.yml
+            images: 922228114461.dkr.ecr.ap-south-1.amazonaws.com/api-card-details:$environment-$RUN_ID

@@ -1,9 +1,10 @@
 apiVersion: v1
 kind: Deployment
 metadata:
-  name:
+  name: api-card-details
   labels:
     app: api-card-details
+  namespace: lights5-api
 spec:
   replicas: 1
   selectors:
@@ -18,7 +19,7 @@ spec:
     spec:
       containers:
         - name: api-card-details
-          image: public.ecr.aws/q2n5f9p3/api-card-details:latest
+          image: 922228114461.dkr.ecr.ap-south-1.amazonaws.com/api-card-details
           ports:
             - containerPort: 8080
               protocol: TCP
