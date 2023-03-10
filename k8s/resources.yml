@@ -12,7 +12,6 @@ spec:
       port: 8080
       protocol: TCP
       targetPort: 8080
-      nodePort: 32500
   selector:
     app: api-card-details
   type: NodePort
@@ -39,10 +38,25 @@ spec:
     spec:
       containers:
         - name: api-card-details
-          image: 922228114461.dkr.ecr.ap-south-1.amazonaws.com/api-card-details
+          image: cskblackhawk/api-card-details
           ports:
             - containerPort: 8080
               protocol: TCP
           imagePullPolicy: Always
+
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: api-card-details
+  namespace: lights5-api
+spec:
+  rules:
+    - host: lights5.com
+      http:
+        - path: /card-details
+          backend:
+            serviceName: api-card-details
+            servicePort: 8080
 
 
