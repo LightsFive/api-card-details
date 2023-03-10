@@ -58,8 +58,7 @@ spec:
     http:
       paths:
       - path: /card-details
-         backend:
-           serviceName: api-card-details
-           servicePort: 8080
-
-
+        pathType: Prefix
+        backend:
+          serviceName: api-card-details
+          servicePort: 8080
