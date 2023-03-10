@@ -54,11 +54,12 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: lights5.com
-      http:
-        - path: /card-details
-          backend:
-            serviceName: api-card-details
-            servicePort: 8080
+  - host: lights5.com
+    http:
+      paths:
+      - path: /card-details
+         backend:
+           serviceName: api-card-details
+           servicePort: 8080
 
 
