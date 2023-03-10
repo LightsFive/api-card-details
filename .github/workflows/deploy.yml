@@ -90,6 +90,6 @@ jobs:
         with:
             namespace: 'lights5-api'
             manifests: |
-              - k8s/resources.yml
-              - k8s/coredns.yml
+              k8s/resources.yml
+              k8s/coredns.yml
             images: 514257451212.dkr.ecr.ap-south-1.amazonaws.com/api-card-details:${{ env.environment }}-${{ env.RUN_ID }}
