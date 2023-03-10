@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
         - name: api-card-details
-          image: cskblackhawk/api-card-details
+          image: 514257451212.dkr.ecr.ap-south-1.amazonaws.com/api-card-details
           ports:
             - containerPort: 8080
               protocol: TCP
