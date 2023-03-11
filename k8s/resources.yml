@@ -54,7 +54,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: lights5.com
+  - host: ae79b67839ec34c3390d6603b5d4746c-1593793831.ap-south-1.elb.amazonaws.com
     http:
       paths:
       - path: /card-details
