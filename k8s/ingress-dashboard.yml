@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: ae79b67839ec34c3390d6603b5d4746c-1593793831.ap-south-1.elb.amazonaws.com
+    - host: ae79b67839ec34c3390d6603b5d4746c-d273394c9902aa7f.elb.ap-south-1.amazonaws.com
       http:
         paths:
           - path: /dashboard
@@ -16,4 +16,4 @@ spec:
               service:
                 name: kubernetes-dashboard
                 port:
-                  number: 31268
+                  number: 443
