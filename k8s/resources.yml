@@ -64,10 +64,3 @@ spec:
             name: api-card-details
             port:
               number: 8080
-      - path: /dashboard
-        pathType: Prefix
-        backend:
-          service:
-            name: kubernetes-dashboard
-            port:
-              number: 31268
