@@ -81,14 +81,14 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
-          context: 'eksUser@api-kubernetes-test.ap-south-1.eksctl.io'
+          context: 'arn:aws:eks:ap-south-1:514257451212:cluster/api-kubernetes-dev'
           cluster-type: 'generic'
         id: setcontext
 
       - name: Deploy to Kubernetes
         uses: Azure/k8s-deploy@v4
         with:
-            namespace: 'kube-system'
+            namespace: 'lights5-api'
             manifests: |
-              k8s/coredns.yml
+              k8s/resources.yml
             images: 514257451212.dkr.ecr.ap-south-1.amazonaws.com/api-card-details:${{ env.environment }}-${{ env.RUN_ID }}

@@ -54,7 +54,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: dev-api.nonprod.nb01.local
+  - host: lights5.com
     http:
       paths:
       - path: /card-details
