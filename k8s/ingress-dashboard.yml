@@ -17,3 +17,5 @@ spec:
                 name: kubernetes-dashboard
                 port:
                   number: 443
+  tls:
+    - secretName: k8s-dashboard-certs
