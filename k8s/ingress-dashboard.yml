@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   rules:
-    - host: ae79b67839ec34c3390d6603b5d4746c-1593793831.ap-south-1.elb.amazonaws.com
+    - host: acb9fbefecd34403a9d4b85d9d287409-1143412127.ap-south-1.elb.amazonaws.com
       http:
         paths:
           - path: /dashboard
