@@ -19,8 +19,8 @@ data:
         reload
         loadbalance
     }
-    nb01.local:53 {
+    lights5.com:53 {
         errors
         cache 30
-        forward . a52e23883f8394dd38c926f8cecba880-1915562519.ap-south-1.elb.amazonaws.com
+        forward . ae79b67839ec34c3390d6603b5d4746c-1593793831.ap-south-1.elb.amazonaws.com
     }
