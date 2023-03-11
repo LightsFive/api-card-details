@@ -81,7 +81,7 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
-          context: 'arn:aws:eks:ap-south-1:514257451212:cluster/api-kubernetes-dev'
+          context: 'api-k8s-dev'
           cluster-type: 'generic'
         id: setcontext
 
