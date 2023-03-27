@@ -24,6 +24,16 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
@@ -57,7 +67,8 @@
 						</exclude>
 					</excludes>
 					<image>
-						<name>514257451212.dkr.ecr.ap-south-1.amazonaws.com/api-card-details:${environment}-${RUN_ID}</name>
+						<!--<name>514257451212.dkr.ecr.ap-south-1.amazonaws.com/api-card-details:${environment}-${RUN_ID}</name>-->
+						<name>cskblackhawk/api-card-details:${environment}-${RUN_ID}</name>
 					</image>
 				</configuration>
 			</plugin>
