@@ -3,6 +3,7 @@ kind: Service
 metadata:
   labels:
     app: api-card-details
+    release: monitoring
   name: api-card-details
 spec:
   externalTrafficPolicy: Cluster
@@ -13,6 +14,7 @@ spec:
       targetPort: 8080
   selector:
     app: api-card-details
+    release: monitoring
   type: NodePort
 
 ---
@@ -22,17 +24,20 @@ metadata:
   name: api-card-details
   labels:
     app: api-card-details
+    release: monitoring
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: api-card-details
+      release: monitoring
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
         app: api-card-details
+        release: monitoring
     spec:
       containers:
         - name: api-card-details
