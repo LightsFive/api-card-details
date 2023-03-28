@@ -18,6 +18,6 @@ management:
     metrics:
       enabled: true
       tags:
-      application: ${spring.application.name}
+        application: ${spring.application.name}
     prometheus:
       enabled: true
