@@ -30,7 +30,6 @@ spec:
   selector:
     matchLabels:
       app: api-card-details
-      release: monitoring
   strategy:
     type: RollingUpdate
   template:
