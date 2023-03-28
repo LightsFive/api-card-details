@@ -1,3 +1,6 @@
+spring:
+  application:
+    name: api-card-details
 server:
   servlet:
     context-path: /card-details
@@ -14,5 +17,7 @@ management:
       show-details: always
     metrics:
       enabled: true
+      tags:
+      application: ${spring.application.name}
     prometheus:
       enabled: true
