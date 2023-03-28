@@ -4,7 +4,6 @@ metadata:
   labels:
     app: api-card-details
   name: api-card-details
-  namespace: lights5-api
 spec:
   externalTrafficPolicy: Cluster
   ports:
@@ -23,7 +22,6 @@ metadata:
   name: api-card-details
   labels:
     app: api-card-details
-  namespace: lights5-api
 spec:
   replicas: 1
   selector:
@@ -49,7 +47,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: api-card-details
-  namespace: lights5-api
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
