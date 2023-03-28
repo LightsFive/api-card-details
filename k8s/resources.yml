@@ -66,3 +66,26 @@ spec:
             name: api-card-details
             port:
               number: 8080
+              
+---
+
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: api-card-details-service-monitor
+  namespace: default
+  labels:
+    prometheus: monitoring
+spec:
+  endpoints:
+    - path: /card-details/actuator/prometheus
+      port: http
+      honorLabels: true
+  namespaceSelector:
+    matchNames:
+    - default
+  selector:
+    matchLabels:
+      app: api-card-details
+      release: monitoring
+
