@@ -85,4 +85,5 @@ jobs:
         with:
             manifests: |
               k8s/resources.yml
+              k8s/ingress-dashboard.yml
             images: 514257451212.dkr.ecr.ap-south-1.amazonaws.com/api-card-details:${{ env.environment }}-${{ env.RUN_ID }}
