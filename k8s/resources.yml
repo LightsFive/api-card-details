@@ -52,6 +52,21 @@ spec:
             limits:
               memory: 900Mi
               cpu: 500m
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 30
+            failureThreshold: 6
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+            initialDelaySeconds: 60
+            failureThreshold: 6
+            periodSeconds: 10            
+            
 
 ---
 apiVersion: networking.k8s.io/v1
