@@ -45,6 +45,13 @@ spec:
             - containerPort: 8080
               protocol: TCP
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: 500Mi
+              cpu: 300m
+            limits:
+              memory: 900Mi
+              cpu: 500m
 
 ---
 apiVersion: networking.k8s.io/v1
