@@ -54,14 +54,14 @@ spec:
               cpu: 500m
           readinessProbe:
             httpGet:
-              path: /actuator/health/readiness
+              path: /card-details/actuator/health/readiness
               port: 8080
             initialDelaySeconds: 30
             failureThreshold: 6
             periodSeconds: 10
           livenessProbe:
             httpGet:
-              path: /actuator/health/liveness
+              path: /card-details/actuator/health/liveness
               port: 8080
             initialDelaySeconds: 60
             failureThreshold: 6
